@@ -2,7 +2,7 @@
 
 public class Reply : BaseEntity
 {
-	public string Body { get; set; }
+	public string Content { get; set; }
 
 	// Relationships
 	public Guid UserId { get; set; }

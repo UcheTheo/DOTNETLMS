@@ -23,6 +23,18 @@ public class UsersController : BaseController
 		_logger = logger;
 	}
 
+	public async Task<IActionResult> GetUsers()
+	{
+		var users = await _lmsUnitOfWork.Users.All();
+
+		var result = new PagedResult<User>()
+		{
+			Content = users.ToList(),
+			ResultCount = users.Count()
+		};
+		return Ok(result);
+	}
+
 	[HttpPost]
 	public async Task<IActionResult> AddUser(CreateUserDto user)
 	{

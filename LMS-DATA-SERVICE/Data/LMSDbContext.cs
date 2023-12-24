@@ -141,7 +141,7 @@ public class LMSDbContext : IdentityDbContext
 			.WithOne(r => r.Comment)
 			.HasForeignKey(r => r.CommentId)
 			.IsRequired(false);
-		//---------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------
 
 		//-------REVIEW-------------
 		// Ensure unique constraint for the combination of UserId and CourseId
